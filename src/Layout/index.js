@@ -55,7 +55,7 @@ class Layout extends Component {
     deleteUser = (index) => {
         let userList = _.cloneDeep(this.state.usersData)
         let newList = {}
-        newList.data = _.filter(userList.data, (element => element.student_first_name != index.student_first_name))
+        newList.data = _.filter(userList.data, (element => element.student_first_name !== index.student_first_name))
         this.props.updateUserList(newList.data)
     }
 

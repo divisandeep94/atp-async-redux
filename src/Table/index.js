@@ -39,15 +39,15 @@ class TableComponent extends Component {
                     </thead>
                     <tbody>
                         {usersData && usersData.data.map((user, index) => {
-                            return (user.student_first_name.toLowerCase().indexOf(searchString.toLowerCase()) != -1 ||
-                                user.student_last_name.toLowerCase().indexOf(searchString.toLowerCase()) != -1) &&
+                            return (user.student_first_name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 ||
+                                user.student_last_name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1) &&
                                 <tr key={index} style={{ cursor: 'pointer' }}>
                                     <td>{index + 1}</td>
                                     <td>{user.student_first_name}</td>
                                     <td>{user.student_last_name}</td>
                                     <td>{user.marks}</td>
                                     <td>{user.standard}</td>
-                                    <td><button onClick={(e) => { deleteUser(user) }}><img src={Bin} /></button></td>
+                                    <td><button onClick={(e) => { deleteUser(user) }}><img src={Bin} alt="Bin Icon" /></button></td>
                                 </tr>
                         }
                         )}
